@@ -1,0 +1,389 @@
+@charset "utf-8";
+/* CSS Document */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+
+ header {
+	text-align: center;
+ }
+
+ .nav {
+  background-image: url("marieportraitwide.jpg");
+  background-size: cover;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 0px;
+  height: 400px;
+  width: 800px;
+  margin: 10px auto;
+  outline: 3px solid red;
+ }
+
+
+.menusquare {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: red;
+  font-family: 'Segoe UI Light', sans-serif;
+  font-weight: 800;
+  outline: 1px solid red;
+  padding: 0;
+  width: 100px;
+  height: 100px;
+  font-size: 1rem;
+}
+
+.menusquare:hover {
+  cursor: default;
+}
+
+.link {
+	background-color: rgba(255, 255, 255, 0.5);
+	transition: font-size 0.3s ease;
+}
+
+.link:hover {
+	background-color: rgba(255, 255, 255, 0.8);
+	font-size: 1.1em;
+	cursor: pointer;
+}
+
+h1 {
+	font-family: 'Impact', sans-serif;
+	font-size: 5em;
+	margin-left: 20px;
+	margin-bottom: 0;
+	margin-top: auto;
+	letter-spacing: 0.25em;
+}
+
+ .transition {
+	width:100%;
+	margin: 0;
+ }
+
+ .black {
+	display: flex;
+    flex-direction: column;
+	margin-top: 0;
+	background-color: black;
+	
+ }
+
+ h2 {
+	font-family: 'Impact', sans-serif;
+	color: white;
+	margin-left: 5vw;
+	font-size: 2.5em;
+	font-weight: 300;
+	margin-top: 0;
+ }
+
+ .black p {
+	font-family: 'Segoe UI Light', sans-serif;
+	color: #DCDCDC;
+	margin: 0 5vw;
+ }
+ 
+ .content {
+	flex: 1;
+	margin-top: 0;
+	background-color: black;
+	margin-bottom: 5vh;
+	
+ }
+
+ .up {
+	display: block;
+	font-family: 'Impact', sans-serif;
+	width: max-content; 
+	color: black;
+	text-decoration: none;
+	text-align: center;
+	padding: 10px 20px;
+	background-color: white;
+	margin: 0px auto;
+	margin-top: auto;
+ }
+
+ .up:hover {
+	color: red;
+ }
+
+ footer {
+	color: #DCDCDC;
+	font-family: 'Segoe UI Light', sans-serif;
+	text-align: center;
+	background-image: url("footernew2.jpg");
+	background-size: cover;
+	background-position: right center;
+  	background-repeat: no-repeat;
+	background-color: black;
+	padding-top: 45px;
+	padding-bottom: 40px;
+ }
+
+ footer p {
+	margin: 0;
+ }
+
+/* About */
+ .about {
+	display: flex;
+    align-items: center;
+	text-indent: 25px;
+ }
+ .abouttext {
+	flex: 2;
+ }
+
+ .aboutimage {
+	flex: 1;
+	
+ }
+ .aboutimage img {
+	width: 90%;
+ }
+
+ figcaption {
+	color:#DCDCDC;
+	font-family: 'Segoe UI Light', sans-serif;
+	font-size: 0.8em;
+	margin-left: 5vw;
+ }
+
+ /* Projects */
+
+ .projects {
+ display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5%;
+  margin-bottom: 10vh;
+ }
+
+
+h3 {
+	font-family: 'Impact', sans-serif;
+	color: white;
+	margin-left: 10vw;
+	font-size: 1.9rem;
+	font-weight: 300;
+}
+
+ .project img {
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+	margin: 0 auto;
+	display: block;
+ }
+
+ .sticky {
+	position: sticky; 
+	bottom: 0;
+ }
+
+/* Modal */
+
+.readmore {
+	display: block;
+	padding: 10px 20px;
+	background-color: white;
+	color: black;
+	text-decoration: none;
+	font-family: 'Impact', sans-serif;
+	font-weight: 300;
+	margin: 0 auto;
+	margin-top: 15px;
+	cursor: pointer;
+ }
+
+ .readmore:hover {
+	color: red;
+ }
+
+ .modal__panel h4 {
+	  font-family: 'Impact', sans-serif;
+  color: black;
+  font-weight: 300;
+  font-size: 24px;
+ }
+.modal__panel p {
+  color: black;
+  font-family: 'Segoe UI Light', sans-serif;
+}
+
+.modal__panel img {
+	width: 100%;
+	height: auto;
+	margin-bottom: 1rem;
+}
+
+.modal {position:fixed;inset:0;display:flex;align-items:center;justify-content:center;visibility:hidden;opacity:0;transition:opacity .2s ease,visibility .2s;z-index:1000}
+.modal[aria-hidden="false"]{visibility:visible;opacity:1}
+.modal__backdrop{position:absolute;inset:0;background:#000a;backdrop-filter:blur(2px)}
+.modal__panel{
+	position:relative;
+	background:#fff;
+	color:#000;
+	padding:1.5rem;
+	max-width:600px;
+	width:90%;
+	box-shadow:0 10px 30px rgba(0,0,0,.35);
+	z-index:1
+}
+.modal__close{position:absolute;top:.5rem;right:.5rem;background:transparent;border:0;font-size:1.5rem;cursor:pointer}
+
+
+/* Contacts */
+
+.instalogo {
+	display: inline-block;
+	width: 50px;
+	height: 50px;	
+	margin-left: 10vw;
+	margin-top: 3vw;
+	background-size: cover;
+	background-image: url("instalogo.PNG");
+}
+.instalogo:hover {
+	cursor: pointer;
+	background-image: url("instalogored.png");
+}
+
+.youtubelogo {
+	display: inline-block;
+	width: 45px;
+	height: 45px;	
+	margin-top: 3vw;
+	margin-left: 1vw;
+	background-size: cover;
+	background-image: url("youtubelogowhite.PNG");
+}
+.youtubelogo:hover {
+	cursor: pointer;
+	background-image: url("youtubelogored.png");
+}
+
+
+/* Mobile */
+
+.navmobile {
+	display: none;
+}
+
+
+.mobileonly {
+	display: none;
+}
+
+
+@media (max-width: 768px) {
+	.desktoponly {
+		display: none;
+	}
+	.nav {
+		display: none;
+	}
+	h1 {
+		display: none;
+	}
+	.h1mobile {
+	display: block;
+	line-height: 0.9em;
+	}
+
+	.navmobile {
+		background-image: url("marieportraitwide.jpg");
+		background-size: cover;
+  		display: grid;
+  		grid-template-columns: repeat(8, 1fr);
+  		gap: 0px;
+  		width: 99%;
+    	max-width: 99vw;
+		aspect-ratio: 2 / 1;
+  		margin: 10px auto;
+  		outline: 2px solid red;
+	}
+
+
+	.menusquaremobile {
+  		display: flex;
+  		justify-content: center;
+  		align-items: center;
+ 	 	text-decoration: none;
+ 	 	color: red;
+  		font-family: 'Segoe UI Light', sans-serif;
+  		font-weight: 800;
+ 	 	outline: 2px solid red;
+  		padding: 0;
+  		width: auto;
+    	height: auto;
+    	aspect-ratio: 1 / 1;
+}
+
+.menusquaremobile:hover {
+  cursor: default;
+}
+
+.link {
+	font-size: 0.8em;
+}
+
+.link:hover {
+	cursor: pointer;
+	font-size: 0.9em;
+}
+
+.mobiletransition {
+	display: block;
+	}
+
+.transition {
+	display: none;
+}
+
+footer
+{
+	background-size: 130%;
+	background-position: right bottom;
+}
+.mobileonly {
+	display: block;
+}
+
+/* Projects mobile */
+
+.projects {
+	grid-template-columns: repeat(1, 1fr);
+	padding-bottom: 150px;
+
+}
+
+/* About mobile */
+
+.h2aboutmobie{
+	margin-bottom: 0;
+}
+
+.about {
+	flex-direction: column;
+}
+
+.aboutimage {
+	order: -1;
+	margin-bottom: 3%;
+}
+
+.aboutimage img {
+	height: 70vh;
+}
+
+
+}
