@@ -1,0 +1,21 @@
+backend:
+  name: github
+  repo: zakurila/almamalasite
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "images/uploads"
+
+collections:
+  - name: "concerts"
+    label: "Concerts"
+    folder: "concerts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Venue", name: "venue", widget: "string" }
+      - { label: "Ticket link", name: "ticketUrl", widget: "string", required: false }
+      - { label: "Poster", name: "poster", widget: "image", required: false }
+      - { label: "Description", name: "body", widget: "markdown", required: false }
