@@ -107,6 +107,57 @@
 
 </footer>
 
+<script src="projects.js"></script>
+
+<script>
+const projectsContainer = document.getElementById("projects");
+
+projects.forEach(project => {
+  projectsContainer.insertAdjacentHTML("beforeend", `
+    <div class="project">
+
+      <img src="${project.image}" alt="${project.title}">
+
+      <h3>${project.title}</h3>
+
+      <p class="project-date">${project.date}</p>
+
+      <p>${project.shortText}</p>
+
+      <button
+        data-modal-target="#modal-${project.id}"
+        class="open-btn readmore">
+        Read more
+      </button>
+
+      <div
+        id="modal-${project.id}"
+        class="modal"
+        aria-hidden="true"
+        role="dialog"
+        aria-modal="true">
+
+        <div class="modal__backdrop" data-close></div>
+
+        <div class="modal__panel">
+          <button data-close class="modal__close">×</button>
+
+          <img src="${project.image}" alt="${project.title}">
+
+          <h4>${project.modalTitle}</h4>
+
+          <p><strong>${project.date}</strong></p>
+
+          <p>${project.modalContent}</p>
+        </div>
+      </div>
+
+    </div>
+  `);
+});
+</script>
+
+
 <script> 
 document.querySelectorAll('[data-modal-target]').forEach(btn => {
   btn.addEventListener('click', () => {
@@ -175,52 +226,5 @@ function closeModal(modal) {
 })();
 </script>
 
-<script>
-const sheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTZLJC6AGgqZfxgf5yHXBOrIkJieGzsjBlUHK8eZgjSc7ggGCzfokPo06PL-e6o6KVLMVB2CY2cIe2N/pub?gid=0&single=true&output=csv";
-
-function parseCSV(csv) {
-  const lines = csv.trim().split("\n");
-  const headers = lines[0].split(",").map(h => h.trim());
-
-  return lines.slice(1).map(line => {
-    const values = line.split(",").map(v => v.trim());
-    const item = {};
-
-    headers.forEach((header, index) => {
-      item[header] = values[index] || "";
-    });
-
-    return item;
-  });
-}
-
-fetch(sheetUrl)
-  .then(response => response.text())
-  .then(csv => {
-    const projects = parseCSV(csv);
-
-    document.getElementById("projects").innerHTML = projects.map((item, index) => `
-      <div class="project">
-        <img src="${item.image}" alt="${item.title}">
-        <h3>${item.title}</h3>
-        <p>${item.date}<br>${item.preview}</p>
-
-        <button data-modal-target="#modal-${index}" class="open-btn readmore">
-          Read more
-        </button>
-
-        <div id="modal-${index}" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
-          <div class="modal__backdrop" data-close></div>
-          <div class="modal__panel">
-            <button data-close class="modal__close">×</button>
-            <img src="${item.image}" alt="${item.title}">
-            <h4>${item.title}</h4>
-            <p>${item.date}<br><br>${item.content}</p>
-          </div>
-        </div>
-      </div>
-    `).join("");
-  });
-</script>
 </body>
 </html>
