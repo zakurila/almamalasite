@@ -95,83 +95,7 @@
 
 
 		
-		<div class="projects">
-			
-			
-			<div class="project" alt="Pr 4">
-							<img src="crop.jpg">
-							<h3>Project 1</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>	
-							
-							<button data-modal-target="#modal-4" class="open-btn readmore">Read more</button>
-							<div id="modal-4" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
-								<div class="modal__backdrop" data-close></div>
-								<div class="modal__panel">
-									<button data-close class="modal__close">×</button>
-									<h4>Title 1</h4><p>Content 1</p>
-								</div>
-							</div>
-							
-						</div>
-
-
-			<div class="project" alt="Pr 3">
-							<img src="crop.jpg">
-							<h3>Project 1</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>	
-							
-							<button data-modal-target="#modal-3" class="open-btn readmore">Read more</button>
-							<div id="modal-3" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
-								<div class="modal__backdrop" data-close></div>
-								<div class="modal__panel">
-									<button data-close class="modal__close">×</button>
-									<h4>Title 1</h4><p>Content 1</p>
-								</div>
-							</div>
-							
-						</div>
-
-
-						<div class="project" alt="Pr 2">
-							<img src="crop.jpg">
-							<h3>Fremde Erde Festival</h3>
-							<p>25. April 2025</p>	
-							
-							<button data-modal-target="#modal-2" class="open-btn readmore">Read more</button>
-							<div id="modal-2" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
-								<div class="modal__backdrop" data-close></div>
-								<div class="modal__panel">
-									<button data-close class="modal__close">×</button>
-									<img src="crop.jpg">
-									<h4>Fremde Erde Festival</h4><p>25. April 2025. Werke von Maria Herz, Vítězslava Kaprálová, Charlotte Schlesinger.
-										<br>Texte von Maria Leitner, Anna Seghers.
-										<br>Lesung mit musikalischer Begleitung.
-										<br>Depot Kunst und Diskussion.</p>
-								</div>
-							</div>
-
-						</div>
-
-
-						<div class="project" alt="Pr 1">
-							<img src="crop.jpg">
-							<h3>Project 1</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>	
-							
-							<button data-modal-target="#modal-1" class="open-btn readmore">Read more</button>
-							<div id="modal-1" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
-								<div class="modal__backdrop" data-close></div>
-								<div class="modal__panel">
-									<button data-close class="modal__close">×</button>
-									<h4>Title 1</h4><p>Content 1</p>
-								</div>
-							</div>
-							
-						</div>
-
-
-
-		</div>
+		<div class="projects" id="projects"></div>
 	</div>
 	<a href="#top" class="up sticky">BACK TO MENU</a>
 </div>
@@ -249,6 +173,54 @@ function closeModal(modal) {
 		}, 150);
 	});
 })();
+</script>
+
+<script>
+const sheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTZLJC6AGgqZfxgf5yHXBOrIkJieGzsjBlUHK8eZgjSc7ggGCzfokPo06PL-e6o6KVLMVB2CY2cIe2N/pub?gid=0&single=true&output=csv";
+
+function parseCSV(csv) {
+  const lines = csv.trim().split("\n");
+  const headers = lines[0].split(",").map(h => h.trim());
+
+  return lines.slice(1).map(line => {
+    const values = line.split(",").map(v => v.trim());
+    const item = {};
+
+    headers.forEach((header, index) => {
+      item[header] = values[index] || "";
+    });
+
+    return item;
+  });
+}
+
+fetch(sheetUrl)
+  .then(response => response.text())
+  .then(csv => {
+    const projects = parseCSV(csv);
+
+    document.getElementById("projects").innerHTML = projects.map((item, index) => `
+      <div class="project">
+        <img src="${item.image}" alt="${item.title}">
+        <h3>${item.title}</h3>
+        <p>${item.date}<br>${item.preview}</p>
+
+        <button data-modal-target="#modal-${index}" class="open-btn readmore">
+          Read more
+        </button>
+
+        <div id="modal-${index}" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+          <div class="modal__backdrop" data-close></div>
+          <div class="modal__panel">
+            <button data-close class="modal__close">×</button>
+            <img src="${item.image}" alt="${item.title}">
+            <h4>${item.title}</h4>
+            <p>${item.date}<br><br>${item.content}</p>
+          </div>
+        </div>
+      </div>
+    `).join("");
+  });
 </script>
 </body>
 </html>
