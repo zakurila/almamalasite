@@ -44,7 +44,7 @@ html, body {
 }
 
 .link {
-	background-color: rgba(255, 255, 255, 0.5);
+	background-color: rgba(255, 255, 255, 0.7);
 	transition: font-size 0.3s ease;
 }
 
@@ -369,7 +369,7 @@ h3 {
  	 	text-decoration: none;
  	 	color: red;
   		font-family: 'Segoe UI Light', sans-serif;
-  		font-weight: 800;
+  		font-weight: 600;
  	 	outline: 1px solid red;
   		padding: 0;
   		width: auto;
