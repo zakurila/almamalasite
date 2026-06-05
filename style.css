@@ -350,6 +350,8 @@ h3 {
   		gap: 0px;
   		width: calc(100vw - 20px);
    	 	max-width: 100%;
+		outline: 1px solid red;
+		margin: 20px auto;
   		
 	}
 
@@ -362,7 +364,7 @@ h3 {
  	 	color: red;
   		font-family: 'Segoe UI Light', sans-serif;
   		font-weight: 800;
- 	 	outline: 2px solid red;
+ 	 	outline: 1px solid red;
   		padding: 0;
   		width: auto;
     	height: auto;
