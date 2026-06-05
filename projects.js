@@ -4,8 +4,9 @@ const projects = [
     id: 8,
     title: "Spring Awakening",
     date: "Dienstag 07. April 2026",
-    shortText: `Rock-Musical von Duncan Sheik und Steven Sater`,
-    image: "https://www.volksoper.at/FrontendImageStore/2000/auto/prop/volksoper_wien/repertoire/2026-02-GP-Spring-MXS-8.jpg",
+    shortText: `Rock-Musical von Duncan Sheik und Steven Sater. © Photo by © Marco Sommer
+    <br><a href="https://www.volksoper.at/produktion/spring-awakening-2026.de.html" target="_blank">Volksoper</a>`,
+    image: "blank.png",
     modalTitle: "Spring Awakening",
     modalContent: `Rock-Musical von Duncan Sheik und Steven Sater<br>
   In deutscher Sprache mit englischen Songs, mit deutschen und englischen Übertiteln<br>
@@ -65,8 +66,9 @@ const projects = [
     id: 3,
     title: "Venus im Pelz",
     date: "7. März 2024",
-    shortText: `Theater Nestroyhof Hamakom, Dramatisierung der Novelle von Leopold Sacher-Masoch`,
-    image: "https://i.ds.at/WRE4mA/c:1200:901:fp:0.500:0.500/rs:fill:1600:0/plain/lido-images/2024/03/08/688b72d4-bbf0-464b-8d3a-823f28c0aa6a.jpeg",
+    shortText: `Theater Nestroyhof Hamakom, Dramatisierung der Novelle von Leopold Sacher-Masoch. <br>
+    <a href="https://www.divercitylab.at/venus-im-pelz/" target="_blank">DivercityLab</a>`,
+    image: "blank.png",
     modalTitle: "Venus im Pelz",
     modalContent: `Eine Kooperation des diverCITYLAB mit Theater Nestroyhof Hamakom<br>Regie: Azelia Opak<br>Uraufführung: 7. März 2024 im Theater Nestroyhof Hamakom
     <br>Weitere Spieltermine: 8.-10. März 2024
@@ -78,8 +80,9 @@ const projects = [
     id: 2,
     title: "HÖLLENKINDER",
     date: "3., 6., 8. – 10. und 14. – 17. Dezember 2022",
-    shortText: `von Gabriele Kögl<br>Uraufführung, Koproduktion mit Theater Drachengasse<br>Bar&Co<br>um 20 Uhr`,
-    image: "https://www.drachengasse.at/upload/produktionen/produktion_1018_Photo1.jpg",
+    shortText: `von Gabriele Kögl<br>Uraufführung, Koproduktion mit Theater Drachengasse<br>Bar&Co<br>um 20 Uhr.
+    <br> <a href="https://www.drachengasse.at/spielplan_detail.asp?id=1018/" target="_blank">Drachengasse Theater</a>`,
+    image: "blank.png",
     modalTitle: "HÖLLENKINDER",
     modalContent: `<br>Regie: Azelia Opak<br>
 Dramaturgie: Andrea Zaiser<br>
@@ -94,7 +97,7 @@ Rechte bei Karl Mahnke Theaterverlag, Berlin<br><br>Dauer: 60 min.<br>
     title: "CORIOLANUS",
     date: "14. September 2022 - 16. Oktober 2022",
     shortText: `William Shakespeare<br>Wortwiege <br> <a href="https://www.wortwiege.at/projekt/coriolanus/" target="_blank">Mehr erfahren</a>`,
-    image: "https://www.wortwiege.at/wp-content/uploads/Coriolanus-0015-c-Julia-Kampichler.jpg.webp",
+    image: "blank.png",
     modalTitle: "CORIOLANUS",
     modalContent: `Sa 24.9. (19:30);
 Do 29.9. (19:30)*, So 2.10. (15:00);
@@ -106,7 +109,7 @@ Musikbearbeitung: Barbara Maria Neu, Derya Satir<br>
 Bühne: Felix Huber<br>
 Kostüme: Noémi Borcsányi-Andits<br>
 Licht: Lukas Kaltenbäck<br>Regieassistenz: Derya Satir<br>
-Dramaturgie: Marie-Therese Handle-Pfeiffer<br>
+Dramaturgie: Marie-Therese Handle-Pfeiffer<br> <a href="https://www.wortwiege.at/projekt/coriolanus/" target="_blank">Wortwiege Theater</a>
     `
   },
 ];
