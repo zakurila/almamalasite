@@ -331,6 +331,11 @@ h3 {
 	.desktoponly {
 		display: none;
 	}
+
+	.mobileonly {
+	display: block;
+	}
+
 	.nav {
 		display: none;
 	}
@@ -386,6 +391,8 @@ h3 {
 
 .mobiletransition {
 	display: block;
+	width: 100%;
+  	height: auto;
 	}
 
 .transition {
@@ -397,9 +404,7 @@ footer
 	background-size: 130%;
 	background-position: right bottom;
 }
-.mobileonly {
-	display: block;
-}
+
 
 /* Projects mobile */
 
