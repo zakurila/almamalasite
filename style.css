@@ -357,7 +357,7 @@ h3 {
   		width: calc(100vw - 20px);
    	 	max-width: 100%;
 		outline: 1px solid red;
-		margin: 0 20px auto auto;
+		margin: 5px 20px auto auto;
   		
 	}
 
