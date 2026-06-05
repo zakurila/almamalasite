@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Alma Mala - Viola</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	
+<header id="header">
+		<nav>
+			<div class="nav desktoponly" id="nav">
+				<a href="" class="menusquare"> </a>
+				<a href="" class="menusquare"> </a>
+				<a href="" class="menusquare"> </a>
+				<a href="" class="menusquare"> </a>
+				<a href="" class="menusquare"> </a>
+				<a href="" class="menusquare"> </a>
+				<a href="" class="menusquare"> </a>
+				<a href="" class="menusquare"> </a>
+				<a href="" class="menusquare"> </a>
+				<a href="index.html" class="menusquare link">Home</a>
+				<a href="" class="menusquare"> </a>
+				<a href="" class="menusquare"> </a>
+				<a href="" class="menusquare"> </a>
+				<a href="" class="menusquare"> </a>
+				<a href="Projects.html" class="menusquare link">Projects</a>
+				<a href="" class="menusquare"> </a>
+				<a href="" class="menusquare"> </a>
+				<a href="Contact.html" class="menusquare link">Contact</a>
+				<a href="" class="menusquare"> </a>
+				<a href="" class="menusquare"> </a>
+				<a href="About.html" class="menusquare link">About</a>
+				<a href="" class="menusquare"> </a>
+				<a href="" class="menusquare"> </a>
+				<a href="" class="menusquare"> </a>
+				<a href="" class="menusquare"> </a>
+				<a href="" class="menusquare"> </a>
+				<a href="" class="menusquare"> </a>
+				<a href="" class="menusquare"> </a>
+				<a href="" class="menusquare"> </a>
+				<a href="" class="menusquare"> </a>
+				<a href="" class="menusquare"> </a>
+				<a href="" class="menusquare"> </a>
+			</div>
+		
+
+			<div class="navmobile" id="nav">
+				<a href="" class="menusquaremobile"> </a>
+				<a href="" class="menusquaremobile"> </a>
+				<a href="" class="menusquaremobile"> </a>
+				<a href="" class="menusquaremobile"> </a>
+				<a href="" class="menusquaremobile"> </a>
+				<a href="" class="menusquaremobile"> </a>
+				<a href="" class="menusquaremobile"> </a>
+				<a href="" class="menusquaremobile"> </a>
+				<a href="" class="menusquaremobile"> </a>
+				<a href="index.html" class="menusquaremobile link">Home</a>
+				<a href="" class="menusquaremobile"> </a>
+				<a href="" class="menusquaremobile"> </a>
+				<a href="" class="menusquaremobile"> </a>
+				<a href="" class="menusquaremobile"> </a>
+				<a href="Projects.html" class="menusquaremobile link">Projects</a>
+				<a href="" class="menusquaremobile"> </a>
+				<a href="" class="menusquaremobile"> </a>
+				<a href="Contact.html" class="menusquaremobile link">Contact</a>
+				<a href="" class="menusquaremobile"> </a>
+				<a href="" class="menusquaremobile"> </a>
+				<a href="About.html" class="menusquaremobile link">About</a>
+				<a href="" class="menusquaremobile"> </a>
+				<a href="" class="menusquaremobile"> </a>
+				<a href="" class="menusquaremobile"> </a>
+				<a href="" class="menusquaremobile"> </a>
+				<a href="" class="menusquaremobile"> </a>
+				<a href="" class="menusquaremobile"> </a>
+				<a href="" class="menusquaremobile"> </a>
+				<a href="" class="menusquaremobile"> </a>
+				<a href="" class="menusquaremobile"> </a>
+				<a href="" class="menusquaremobile"> </a>
+				<a href="" class="menusquaremobile"> </a>
+			</div>
+	</nav>
+		
+	
+		<h1 desktoponly>A L M A  M A L A</h1>
+		<h1 class="h1mobile mobileonly">A L M A<br>M A L A</h1>
+	</header>
+
+<div class="black">
+	<img src="transition.PNG" class="transition desktoponly"> 
+	<img src="mobiletransition.PNG" class="mobiletransition mobileonly"> 
+	
+	<div class="content"> 
+		<h2>CONTACT</h2>
+		<p>For concert engagements, chamber music collaborations, contemporary music projects, theater productions, and artistic inquiries, please get in touch.</p>
+		<p>For booking requests or further information, please send an email directly.</p>
+		<p>Email: example@email.com</p>
+		<div class="instalogo"></div>
+		<div class="youtubelogo"></div>
+	</div>
+	<a href="#top" class="up">BACK TO MENU</a>
+</div>
+
+
+<footer>
+	<p>All rights reserved. Copyright 2024. Marie Alma Mala.</p>
+	<p>example@email.com</p>
+
+	</footer>
+
+	<script>
+(function(){
+	if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+	const el = document.getElementById('content') || document.querySelector('.content');
+	if (!el) return;
+
+	function scrollToElement(el, duration = 2000) {
+		const start = window.scrollY || window.pageYOffset;
+		const target = el.getBoundingClientRect().top + start;
+		const distance = target - start;
+		const startTime = performance.now();
+		const ease = t => t < 0.5 ? 2*t*t : -1 + (4-2*t)*t; // easeInOut
+
+		function step(now) {
+			const t = Math.min(1, (now - startTime) / duration);
+			window.scrollTo(0, start + distance * ease(t));
+			if (t < 1) requestAnimationFrame(step);
+		}
+		requestAnimationFrame(step);
+	}
+
+	window.addEventListener('load', () => {
+		setTimeout(() => {                // slight delay for images/layout
+			scrollToElement(el, 2000);      // change 2000 → larger ms to slow more
+		}, 150);
+	});
+})();
+</script>
+</body>
+</html>
